@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Migros",
+    "asset": "migros-jet.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/migros-jet.png"
+  },
+  {
+    "name": "A101",
+    "asset": "a101.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/a101.png"
+  },
+  {
+    "name": "BİM",
+    "asset": "bim.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/bim.png"
+  },
+  {
+    "name": "ŞOK",
+    "asset": "sok.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/sok.png"
+  },
+  {
+    "name": "CarrefourSA",
+    "asset": "carrefoursa.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/carrefoursa.png"
+  },
+  {
+    "name": "FİLE",
+    "asset": "file-market.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/file-market.png"
+  },
+  {
+    "name": "Metro",
+    "asset": "metro-cash-carry.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/metro-cash-carry.png"
+  },
+  {
+    "name": "Hakmar",
+    "asset": "hakmar.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/hakmar.png"
+  },
+  {
+    "name": "Onur Market",
+    "asset": "onur-market.png",
+    "source": "https://raw.githubusercontent.com/openfoodfacts/brand-images/main/xx/stores/onur-market.png"
+  },
+  {
+    "name": "Bizim Toptan",
+    "asset": "bizim-toptan.png",
+    "source": "https://raw.githubusercontent.com/ahmeterenodaci/Istanbul-Stock-Exchange--BIST--including-symbols-and-logos/main/logos/BIZIM.png"
+  }
+]
