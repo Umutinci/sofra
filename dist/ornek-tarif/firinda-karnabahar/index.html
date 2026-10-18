@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sofra için Fırında Karnabahar tarif sayfası önizlemesi.">
+  <title>Fırında Karnabahar · Sofra örnek tarif</title>
+  <style>
+    :root{color-scheme:light;--paper:#fffaf3;--ink:#173f45;--muted:#64736e;--pink:#f2dce0;--rose:#a84a57;--line:#e4e0d7;--green:#dcece1;--ease:cubic-bezier(.22,.61,.36,1)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5;overflow-x:hidden}
+    a{color:inherit}
+    button,input{font:inherit}
+    :focus-visible{outline:3px solid var(--rose);outline-offset:4px}
+    .site-header{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;min-height:76px;padding:0 clamp(1rem,4vw,4rem);background:var(--paper);border-bottom:1px solid var(--line)}
+    .site-header nav{display:flex;align-items:center;gap:clamp(.8rem,2vw,2rem);font-size:.85rem;font-weight:700}
+    .site-header nav a{text-decoration:none}
+    .site-header nav a:hover,.breadcrumb a:hover{color:var(--rose)}
+    .site-header .right-nav{justify-content:flex-end}
+    .logo{text-decoration:none;font-size:2.2rem;font-weight:900;line-height:1;letter-spacing:-.09em}
+    .header-cta{display:inline-flex;align-items:center;gap:.6rem;padding:.65rem 1.1rem;border-radius:3rem;background:var(--ink);color:var(--paper);white-space:nowrap}
+    .mobile-nav{display:none}
+    .recipe-shell{display:grid;grid-template-columns:minmax(0,38%) minmax(0,62%);align-items:start;min-width:0}
+    .recipe-copy{min-width:0;padding:clamp(1.5rem,3.7vw,4rem) clamp(1.25rem,3.3vw,3.8rem) 4rem}
+    .breadcrumb{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-bottom:1.65rem;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--rose)}
+    .breadcrumb a{text-decoration:none}
+    .preview-label{display:inline-block;padding:.45rem .8rem;border-radius:2rem;background:var(--pink);color:#864458;font-size:.68rem;font-weight:800;letter-spacing:.12em}
+    h1{margin:1rem 0 .45rem;font-size:clamp(2.3rem,3.5vw,4.4rem);line-height:1.03;letter-spacing:-.055em;text-wrap:balance}
+    .rating{display:flex;align-items:center;gap:.8rem;color:var(--muted);font-size:.8rem}
+    .rating .stars{color:#a57458;font-size:1.3rem;letter-spacing:.07em}
+    .intro{max-width:34rem;margin:1.3rem 0 1.6rem;font-size:1rem;line-height:1.7;color:#435b58}
+    .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 2.5rem;padding:1.25rem 0;border-top:1px dashed #c9d0c9;border-bottom:1px dashed #c9d0c9}
+    .facts div{min-width:0;padding:0 .7rem;text-align:center;border-right:1px solid var(--line)}
+    .facts div:first-child{padding-left:0}.facts div:last-child{border-right:0;padding-right:0}
+    .facts strong,.facts span{display:block}.facts strong{font-size:.95rem;line-height:1.25}.facts span{margin-top:.35rem;color:var(--muted);font-size:.68rem}
+    .recipe-section{padding:2rem 0;border-top:1px dashed #ccd4cd}
+    .recipe-section h2{margin:0;font-size:clamp(1.55rem,2.1vw,2.2rem);line-height:1.15;letter-spacing:-.035em}
+    .section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+    .section-note{margin:.6rem 0 1.35rem;color:var(--muted);font-size:.83rem;line-height:1.55}
+    .servings{display:inline-flex;align-items:center;gap:.35rem;padding:.42rem .7rem;border:1px solid var(--line);border-radius:2rem;color:var(--muted);font-size:.73rem;white-space:nowrap}
+    .ingredient-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem}
+    .ingredient-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:116px;padding:1rem;border:1px solid #dfe6dd;border-radius:1rem;background:#fffdf9;cursor:pointer;transition:background .23s var(--ease),border-color .23s var(--ease),transform .23s var(--ease)}
+    .ingredient-card:hover{background:linear-gradient(0deg,#e7f1e9 0%,#fffdf9 85%);transform:translateY(-2px)}
+    .ingredient-card:has(input:checked){background:linear-gradient(0deg,#bddcc7 0%,#e7f1e9 100%);border-color:#91b99e}
+    .ingredient-card:focus-within{outline:3px solid var(--rose);outline-offset:2px}
+    .ingredient-card input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+    .ingredient-card .amount{font-size:.78rem;color:#6b7d70}.ingredient-card strong{display:block;max-width:100%;font-size:1rem;line-height:1.25;overflow-wrap:anywhere}
+    .ingredient-card::after{content:"✓";position:absolute;right:.8rem;top:.65rem;color:#1e6041;font-size:.9rem;font-weight:800;opacity:0}.ingredient-card:has(input:checked)::after{opacity:1}
+    .ingredient-counter{margin:1rem 0 0;color:#456650;font-size:.82rem;font-weight:700}
+    .steps{list-style:none;counter-reset:step;display:grid;gap:1.1rem;margin:1.25rem 0 0;padding:0}
+    .steps li{counter-increment:step;display:grid;grid-template-columns:2rem 1fr;gap:.85rem;align-items:start;color:#435b58;font-size:.91rem;line-height:1.65}
+    .steps li::before{content:counter(step);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--pink);color:#8d4757;font-size:.75rem;font-weight:800}
+    .source-box{margin-top:1.2rem;padding:1rem 1.15rem;border:1px solid var(--line);border-radius:1rem;background:#f8f2e9;font-size:.82rem;color:#4a635f}
+    .source-box a{font-weight:800;text-underline-offset:.2rem}
+    .empty-reviews{margin-top:1.2rem;padding:1.3rem;border:1px solid var(--line);border-radius:1rem;color:var(--muted);font-size:.87rem}
+    .recipe-media{position:sticky;top:76px;display:grid;place-items:center;align-self:start;height:calc(100dvh - 76px);min-height:590px;overflow:hidden;background:linear-gradient(180deg,#edddd7 0 55%,var(--paper) 55% 100%);isolation:isolate}
+    .recipe-media::before{content:"";position:absolute;inset:0 0 45%;z-index:-1;background:radial-gradient(circle at 11% 23%,transparent 0 4.5rem,#b77f792e 4.55rem 4.6rem,transparent 4.65rem),radial-gradient(circle at 80% 12%,transparent 0 7rem,#b77f7927 7.05rem 7.1rem,transparent 7.15rem)}
+    .recipe-media figure{width:min(83%,860px);margin:0}
+    .recipe-media img{display:block;width:100%;height:auto;max-height:min(74dvh,800px);object-fit:contain;border-radius:1.25rem;box-shadow:0 1.6rem 2.3rem #553c3630}
+    .recipe-media figcaption{margin:.8rem .25rem 0;color:#66756d;font-size:.72rem;text-align:right}
+    .site-footer{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:2rem clamp(1rem,4vw,4rem);background:var(--ink);color:var(--paper);font-size:.8rem}
+    .site-footer strong{display:block;font-size:1.8rem;letter-spacing:-.08em}.site-footer a{text-decoration:none}.site-footer a:hover{text-decoration:underline}
+    @media(max-width:850px){.site-header{min-height:66px;padding-inline:1rem}.site-header nav{display:none}.site-header .right-nav{display:flex}.site-header .header-cta{padding:.55rem .8rem;font-size:.7rem}.logo{font-size:1.9rem}.mobile-nav{position:relative;display:block;font-size:.8rem}.mobile-nav summary{list-style:none;display:inline-flex;align-items:center;min-height:44px;cursor:pointer}.mobile-nav summary::-webkit-details-marker{display:none}.mobile-nav nav{position:absolute;top:100%;left:0;display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:14rem;padding:.35rem;border:1px solid var(--line);border-radius:.85rem;background:var(--paper);box-shadow:0 1rem 2rem #173f4520}.mobile-nav nav a{padding:.7rem .85rem}.recipe-shell{grid-template-columns:1fr}.recipe-media{position:relative;top:auto;grid-row:1;height:clamp(20rem,75vw,38rem);min-height:0}.recipe-media figure{width:min(76%,600px)}.recipe-media img{max-height:clamp(17rem,68vw,34rem)}.recipe-copy{padding:2rem clamp(1.2rem,5vw,3rem) 3rem}.facts{margin-bottom:1.5rem}}
+    @media(max-width:480px){.site-header .header-cta{display:none}.recipe-media{height:22rem}.recipe-media figure{width:82%}.recipe-media img{max-height:18rem;border-radius:.8rem}.recipe-copy{padding:1.7rem 1.2rem 2.5rem}.section-head{align-items:center}.servings{white-space:normal;text-align:center}.ingredient-card{min-height:105px;padding:.8rem}.ingredient-card strong{font-size:.9rem}.facts strong{font-size:.83rem}.facts span{font-size:.64rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ingredient-card{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <details class="mobile-nav"><summary aria-label="Menüyü aç">☰ Menü</summary><nav aria-label="Mobil gezinme"><a href="/">Sofra ana sayfa</a><a href="https://www.nefisyemektarifleri.com/firinda-karnabahar/" target="_blank" rel="noopener noreferrer">Özgün tarif ↗</a></nav></details>
+    <nav aria-label="Ana gezinme"><a href="/">Sofra ana sayfa</a><a href="https://www.nefisyemektarifleri.com/firinda-karnabahar/" target="_blank" rel="noopener noreferrer">Özgün tarif ↗</a></nav>
+    <a class="logo" href="/" aria-label="Sofra ana sayfa">sofra.</a>
+    <nav class="right-nav" aria-label="Önizleme bağlantıları"><a class="header-cta" href="/">Sofra’ya dön <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main class="recipe-shell">
+    <article class="recipe-copy">
+      <div class="breadcrumb"><a href="/">← Sofra’ya dön</a><span aria-hidden="true">/</span><span>Örnek tarif</span></div>
+      <span class="preview-label">TEK TARİF ÖNİZLEMESİ</span>
+      <h1>Fırında Karnabahar</h1>
+      <div class="rating"><span class="stars" aria-hidden="true">☆☆☆☆☆</span><span>Henüz değerlendirme yok</span></div>
+      <p class="intro">Haşlanmış karnabahar, yoğurtlu sos ve fırında kızaran kaşar peyniriyle hazırlanan sıcak bir yemek. Bu sayfa, toplu tarif aktarımından önce Sofra görünümünü değerlendirmek için hazırlandı.</p>
+      <div class="facts" aria-label="Tarif özeti"><div><strong>—</strong><span>Hazırlama</span></div><div><strong>≈ 20 dk +</strong><span>Fırında pişirme</span></div><div><strong>—</strong><span>Kalori</span></div></div>
+      <section class="recipe-section" aria-labelledby="ingredients-title">
+        <div class="section-head"><h2 id="ingredients-title">Malzemeler</h2><span class="servings">Porsiyon bilgisi verilmemiş</span></div>
+        <p class="section-note">Evde bulunan malzemeyi işaretle. İşaretleme bu önizleme sayfasında kalır.</p>
+        <div class="ingredient-grid">
+          <label class="ingredient-card"><span class="amount">1 küçük boy</span><strong>Karnabahar</strong><input type="checkbox" aria-label="Karnabahar evde var"></label>
+          <label class="ingredient-card"><span class="amount">1 su bardağı</span><strong>Yoğurt</strong><input type="checkbox" aria-label="Yoğurt evde var"></label>
+          <label class="ingredient-card"><span class="amount">2 adet</span><strong>Yumurta</strong><input type="checkbox" aria-label="Yumurta evde var"></label>
+          <label class="ingredient-card"><span class="amount">Yarım çay bardağı</span><strong>Sıvı yağ</strong><input type="checkbox" aria-label="Sıvı yağ evde var"></label>
+          <label class="ingredient-card"><span class="amount">1 yemek kaşığı</span><strong>Un</strong><input type="checkbox" aria-label="Un evde var"></label>
+          <label class="ingredient-card"><span class="amount">Miktar belirtilmemiş</span><strong>Kaşar peyniri rendesi</strong><input type="checkbox" aria-label="Kaşar peyniri rendesi evde var"></label>
+          <label class="ingredient-card"><span class="amount">Miktar belirtilmemiş</span><strong>Tuz ve pul biber</strong><input type="checkbox" aria-label="Tuz ve pul biber evde var"></label>
+        </div>
+        <p class="ingredient-counter" id="ingredient-counter" aria-live="polite">7 eksik malzeme</p>
+      </section>
+      <section class="recipe-section" aria-labelledby="steps-title"><h2 id="steps-title">Hadi pişirelim</h2><ol class="steps"><li>Karnabaharı çiçeklerine ayırıp tuzlu suda haşla.</li><li>Yoğurt, yumurta, sıvı yağ, un ve baharatları derin bir kapta karıştır.</li><li>Haşlanmış karnabaharları sosa bulayıp yağlanmış fırın kabına yerleştir. Sos artarsa üzerine dök.</li><li>200°C fırında yaklaşık 20 dakika pişir.</li><li>Üzerine kaşar rendesi ekle; peynir eriyip kızarana kadar yeniden fırınla.</li></ol><div class="source-box">Tarif bilgileri <a href="https://www.nefisyemektarifleri.com/firinda-karnabahar/" target="_blank" rel="noopener noreferrer">Nefis Yemek Tarifleri'ndeki özgün tariften</a> uyarlanmıştır. Kapak fotoğrafı Sofra için oluşturulmuş temsili görseldir.</div></section>
+      <section class="recipe-section" aria-labelledby="reviews-title"><h2 id="reviews-title">Yorumlar</h2><div class="empty-reviews">Bu örnek sayfada henüz kullanıcı yorumu yok. Yorum kartlarının görünümünü Sofra ana sayfasındaki demo bölümünde inceleyebilirsin.</div></section>
+    </article>
+    <aside class="recipe-media" aria-label="Tarif görseli"><figure><img src="kapak.png" width="1536" height="1024" alt="Fırında kızarmış kaşarlı karnabahar, temsili görsel"><figcaption>Temsili görsel · Sofra</figcaption></figure></aside>
+  </main>
+  <footer class="site-footer"><div><strong>sofra.</strong><span>Tarif fikrinden alışveriş listene.</span></div><div><a href="/">Sofra ana sayfa</a> · <a href="https://www.nefisyemektarifleri.com/firinda-karnabahar/" target="_blank" rel="noopener noreferrer">Özgün tarif</a><br>Bu sayfa toplu aktarım öncesi tasarım örneğidir.</div></footer>
+  <script>
+    const ingredientBoxes = Array.from(document.querySelectorAll('.ingredient-card input'));
+    const ingredientCounter = document.getElementById('ingredient-counter');
+    function updateIngredientCounter(){const missing=ingredientBoxes.filter(box=>!box.checked).length;ingredientCounter.textContent=missing===0?'Tüm malzemeler evde var':`${missing} eksik malzeme`;}
+    ingredientBoxes.forEach(box=>box.addEventListener('change',updateIngredientCounter));
+  </script>
+</body>
+</html>
