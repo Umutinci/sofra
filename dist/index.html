@@ -2883,22 +2883,25 @@ function draw(){r.querySelectorAll(&#x27;[data-home-dish]&#x27;).forEach(img=&gt
 #sofra-app #detail .detail-scroll{background:#fffefb;min-width:0}
 #sofra-app #detail .detail-scroll .detail-summary{padding-inline:clamp(1rem,2.1vw,2rem)}
 #sofra-app #detail .detail-scroll .detail-body{padding-inline:clamp(1rem,2.1vw,2rem)}
-#sofra-app #detail .watch-pane:not(.no-video),
-#sofra-app #detail .watch-pane:not(.no-video) .watch-stage{background:#f7f1e8}
-#sofra-app #detail .watch-pane:not(.no-video) .watch-stage{isolation:isolate;background:linear-gradient(to bottom,#ead8d1 0%,#eeddd6 53%,#f7f1e8 53.1%,#f7f1e8 100%)}
-#sofra-app #detail .watch-pane:not(.no-video) .watch-stage::before{content:&#x27;&#x27;;position:absolute;inset:0 0 47%;z-index:0;pointer-events:none;opacity:.72;background:radial-gradient(circle at 13% 20%,transparent 0 3.2rem,#bb928a52 3.25rem 3.33rem,transparent 3.38rem),radial-gradient(circle at 78% 25%,transparent 0 5.5rem,#bd958d4d 5.55rem 5.64rem,transparent 5.7rem),radial-gradient(circle at 46% 77%,transparent 0 7rem,#c59d9459 7.04rem 7.12rem,transparent 7.17rem),radial-gradient(circle at 94% 85%,#d9bdb598 0 2rem,transparent 2.1rem)}
-#sofra-app #detail .watch-pane:not(.no-video) .watch-stage video{position:relative;z-index:1;background:transparent;object-fit:contain}
+#sofra-app #detail .watch-pane,
+#sofra-app #detail .watch-pane .watch-stage{background:#f7f1e8}
+#sofra-app #detail .watch-pane .watch-stage{isolation:isolate;background:linear-gradient(to bottom,#ead8d1 0%,#eeddd6 53%,#f7f1e8 53.1%,#f7f1e8 100%)}
+#sofra-app #detail .watch-pane .watch-stage::before{content:&#x27;&#x27;;position:absolute;inset:0 0 47%;z-index:0;pointer-events:none;opacity:.72;background:radial-gradient(circle at 13% 20%,transparent 0 3.2rem,#bb928a52 3.25rem 3.33rem,transparent 3.38rem),radial-gradient(circle at 78% 25%,transparent 0 5.5rem,#bd958d4d 5.55rem 5.64rem,transparent 5.7rem),radial-gradient(circle at 46% 77%,transparent 0 7rem,#c59d9459 7.04rem 7.12rem,transparent 7.17rem),radial-gradient(circle at 94% 85%,#d9bdb598 0 2rem,transparent 2.1rem)}
+#sofra-app #detail .watch-pane .watch-stage video{position:relative;z-index:1;background:transparent;object-fit:contain}
 #sofra-app #detail .watch-stage:not(.is-playing) video{visibility:hidden}
 #sofra-app #detail .watch-stage .soup-cover{position:absolute;z-index:2;left:50%;top:51%;transform:translate(-50%,-50%);width:min(76%,42rem);height:min(77%,37rem);object-fit:contain;filter:drop-shadow(0 1.4rem 1.25rem #6b514c2b);pointer-events:none;transition:opacity .25s ease,visibility .25s ease}
 #sofra-app #detail .watch-stage.is-playing .soup-cover{opacity:0;visibility:hidden}
 #sofra-app #detail .watch-stage .media-play{z-index:3}
-#sofra-app #recipe-content:has(.watch-pane:not(.no-video)) .detail-category{color:#9c554d;opacity:1;font-weight:700}
-#sofra-app #recipe-content:has(.watch-pane:not(.no-video)) .detail-category button{color:#9c554d}
-#sofra-app #recipe-content:has(.watch-pane:not(.no-video)) .detail-scroll .detail-facts{background:#f4e2d9}
-#sofra-app #recipe-content:has(.watch-pane:not(.no-video)) .detail-facts svg{color:#a65e54}
+#sofra-app #recipe-content:has(.watch-pane) .detail-category{color:#9c554d;opacity:1;font-weight:700}
+#sofra-app #recipe-content:has(.watch-pane) .detail-category button{color:#9c554d}
+#sofra-app #recipe-content:has(.watch-pane) .detail-scroll .detail-facts{background:#f4e2d9}
+#sofra-app #recipe-content:has(.watch-pane) .detail-facts svg{color:#a65e54}
 @media(max-width:1100px) and (min-width:801px){#sofra-app #detail .watch-layout{grid-template-columns:minmax(0,44%) minmax(0,56%)}#sofra-app #detail .detail-scroll .ingredient-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:800px){#sofra-app #detail .watch-layout{grid-template-columns:minmax(0,1fr)}#sofra-app #detail .watch-stage .soup-cover{width:min(73%,34rem);height:75%}}
 @media(prefers-reduced-motion:reduce){#sofra-app #detail .watch-stage .soup-cover{transition:none}}
+
+#sofra-app #detail .watch-pane.no-video .watch-stage&gt;img{position:absolute;z-index:2;left:50%;top:51%;transform:translate(-50%,-50%);width:min(76%,42rem);height:min(77%,37rem);object-fit:contain;filter:drop-shadow(0 1.4rem 1.25rem #6b514c2b);pointer-events:none}
+@media(max-width:800px){#sofra-app #detail .watch-pane.no-video .watch-stage&gt;img{width:min(73%,34rem);height:75%}}
 &lt;/style&gt;
 &lt;style id=&quot;sofra-click-photo-to-play&quot;&gt;
 #sofra-app #detail .watch-stage .soup-cover-trigger{position:absolute;z-index:3;left:50%;top:51%;transform:translate(-50%,-50%);width:min(76%,42rem);height:min(77%,37rem);min-height:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;display:grid;place-items:center;cursor:pointer;transition:transform .22s ease}
